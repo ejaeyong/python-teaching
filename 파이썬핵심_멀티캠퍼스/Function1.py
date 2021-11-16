@@ -5,4 +5,3 @@ def times(a,b):
 
 #호출
 print( times(3,4) )
-

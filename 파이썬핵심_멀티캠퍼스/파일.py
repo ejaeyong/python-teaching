@@ -3,6 +3,7 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> strA = "python is very powerful"
 >>> len(strA)
 23
+
 >>> strA[-8:]
 'powerful'
 >>> strB = """이번에는

@@ -26,5 +26,3 @@ def change(x):
 wordlist = ["J","A","M"]
 change(wordlist)
 print("함수 호출후:", wordlist)
-
-
