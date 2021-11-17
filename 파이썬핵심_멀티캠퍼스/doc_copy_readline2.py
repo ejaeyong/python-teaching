@@ -1,7 +1,9 @@
+#정규표현식을 사용
 import re 
 
-f=open('c:\\work\\PV3.txt','rt')
-g=open('c:\\work\\PV3_copy.txt','wt',encoding='utf-8')
+#서버의 어디에 로그?
+f=open(r'D:\교육\교육Git\파이썬핵심_멀티캠퍼스\PV3.txt','rt')
+g=open(r'D:\교육\교육Git\파이썬핵심_멀티캠퍼스\PV3_copy.txt','wt',encoding='utf-8')
 
 #많은 라인의 파일이면 
 #한번에 한줄씩 읽어서 처리한다.  
