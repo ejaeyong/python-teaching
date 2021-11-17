@@ -1,4 +1,4 @@
-# DemoFile.py #f.seek(0) 초기화, read로 모든것을 읽었기 때문에 처음으로 돌아가
+# DemoStr.py
 
 #한글로 쓰기와 읽기
 f = open("c:\\work\\demo.txt", "wt", encoding="utf-8")
@@ -12,9 +12,12 @@ f = open("c:\\work\\demo.txt", "rt", encoding="utf-8")
 print("---read()---")
 print( f.read() )
 print("---readline()---")
+#파일 포인터가 어디쯤? 
 print( f.tell() )
 f.seek(0)
 print( f.readline() )
+#다중 라인 주석 처리: ctrl + / 
+print( f.tell() )
 print( f.readline() )
 print("---readlines()---")
 f.seek(0)
