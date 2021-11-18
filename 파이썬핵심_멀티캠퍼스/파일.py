@@ -9,9 +9,10 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> strB = """이번에는
 다중 라인을 저쟁해 봅니다"""
 >>> strB
-'이번에는\n다중 라인을 저쟁해 봅니다'
+'이번에는\n다중 라인을 \n 저장해 봅니다'
 >>> strB = """이번에는
-다중 라인을 저쟁해 봅니다"""
+다중 라인을 
+저장해 봅니다"""
 >>> print(strB)
 이번에는
 다중 라인을 저쟁해 봅니다
