@@ -30,7 +30,7 @@ for n in range(0,10):
                 try:
                         title = item.text.strip() 
                         print( title )
-                        # if (re.search('아이폰', title)):
-                        #         print(title.strip())
+                        if (re.search('아이폰', title)):
+                                print(title.strip())
                 except:
                         pass
