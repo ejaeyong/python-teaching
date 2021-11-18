@@ -4,10 +4,8 @@ import urllib.request
 #크롤링 
 from bs4 import BeautifulSoup
 
-#파일로 저장
-# f = open("c:\\work\\webtoon.txt", "wt", encoding="utf-8")
-# f=open(r"D:\교육\교육Git\파이썬핵심_멀티캠퍼스\webtoon.txt", "wt", encoding="utf-8")
-f=open(r"D:\교육\교육Git\파이썬핵심_멀티캠퍼스\webtoon.txt", "a+", encoding="utf-8")#append read write
+#파일로 저장(파일이 없으면 생성, 있으면 맨뒤로 가서 첨부)
+f = open(r"D:\교육\교육Git\파이썬핵심_멀티캠퍼스\webtoon.txt", "a+", encoding="utf-8")
 #수열함수로 1부터 5까지 생성 
 for i in range(1,6):
     url = "https://comic.naver.com/webtoon/list?titleId=20853&weekday=fri&page=" + str(i)

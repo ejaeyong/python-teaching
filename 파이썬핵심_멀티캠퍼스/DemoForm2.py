@@ -3,6 +3,10 @@
 import sys 
 from PyQt5.QtWidgets import *
 from PyQt5 import uic 
+#웹서버에 요청 
+import urllib.request
+#크롤링 
+from bs4 import BeautifulSoup
 
 #화면을 로딩
 form_class = uic.loadUiType(r"D:\교육\교육Git\파이썬핵심_멀티캠퍼스\DemoForm2.ui")[0]
@@ -14,7 +18,26 @@ class DemoForm(QMainWindow, form_class):
         self.setupUi(self) 
         self.label.setText("첫번째 데모")
     def firstClick(self):
-        self.label.setText("첫번째~~")
+        #파일로 저장
+        # f = open("c:\\work\\webtoon.txt", "wt", encoding="utf-8")
+        # f=open(r"D:\교육\교육Git\파이썬핵심_멀티캠퍼스\webtoon.txt", "wt", encoding="utf-8")
+        f=open(r"D:\교육\교육Git\파이썬핵심_멀티캠퍼스\webtoon.txt", "a+", encoding="utf-8")#append read write
+        #수열함수로 1부터 5까지 생성 
+        for i in range(1,6):
+            url = "https://comic.naver.com/webtoon/list?titleId=20853&weekday=fri&page=" + str(i)
+            #페이지 처리 
+            data = urllib.request.urlopen(url)
+            #검색이 용이한 객체 
+            soup = BeautifulSoup(data, "html.parser")
+            cartoons = soup.find_all("td", class_="title")
+
+            for item in cartoons:
+                title = item.find("a").text 
+                print( title.strip() )
+                f.write(title.strip() + "\n")
+        f.close()
+        self.label.setText("웹툰 크롤링 종료~~")
+        
     def secondClick(self):
         self.label.setText("두번째 버튼 클릭~~")
     def thirdClick(self):
